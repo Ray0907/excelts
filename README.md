@@ -4,6 +4,14 @@ A TypeScript xlsx reader and writer. It is an independent rewrite, not a fork of
 
 Status: pre-release (0.x). Written for speed and a small install: one runtime dependency (`fflate`); native `node:zlib` is used when available.
 
+## Install
+
+```
+npm i excelts@next
+```
+
+Beta releases are published under the `next` tag. Requires Node 20 or newer; browsers work through the `fflate` fallback.
+
 ## Use
 
 ```ts

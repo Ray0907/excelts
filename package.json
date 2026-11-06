@@ -1,8 +1,30 @@
 {
   "name": "excelts",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0-beta.0",
+  "description": "Fast TypeScript xlsx reader and writer with an exceljs-compatible API",
+  "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ray0907/excelts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ray0907/excelts/issues"
+  },
+  "homepage": "https://github.com/Ray0907/excelts#readme",
+  "keywords": [
+    "xlsx",
+    "excel",
+    "spreadsheet",
+    "exceljs",
+    "typescript",
+    "reader",
+    "writer"
+  ],
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -13,6 +35,9 @@
       "default": "./dist/compat/index.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc -p .",
     "test": "vitest run",
@@ -24,7 +49,8 @@
     "verify:text": "node verify/text-roundtrip.mjs --full",
     "bench": "node bench/run.mjs",
     "bench:read": "node bench/read-run.mjs",
-    "bench:inputs": "node bench/gen-inputs.mjs"
+    "bench:inputs": "node bench/gen-inputs.mjs",
+    "prepublishOnly": "npm run build && npm test"
   },
   "dependencies": {
     "fflate": "^0.8.2"
@@ -36,13 +62,5 @@
     "typescript": "^5.6.0",
     "vitest": "^2.1.0",
     "xlsx": "^0.18.5"
-  },
-  "files": [
-    "dist"
-  ],
-  "description": "Fast TypeScript xlsx reader and writer with an exceljs-compatible API",
-  "license": "MIT",
-  "engines": {
-    "node": ">=20"
   }
 }
