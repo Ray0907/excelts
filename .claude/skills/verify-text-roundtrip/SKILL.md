@@ -24,7 +24,7 @@ Exhaustive over every sequence of tokens from three small alphabets (underscore/
 It does NOT cover: attribute escaping (`escapeXml`), lone surrogates, strings over 8 tokens, characters outside the alphabets, rich-text runs, phonetic runs, or any other reader's view of the file. A pass means no counterexample exists inside these bounds.
 
 Covered files: `src/xml.ts`, `src/xmlRead.ts`, `src/sharedStrings.ts`, `src/readSharedStrings.ts`.
-Sync commit: `b66d880` (the commit at which the script was confirmed to describe these files; the later sharedStrings.ts change only added a rich-text path, which this check does not cover). Move it forward, in `verify/text-roundtrip.mjs`, only after you confirm the alphabets and the sample list still describe the code at the new commit.
+Sync commit: `afe392a` (the commit at which the script was confirmed to describe these files; the later sharedStrings.ts change only added a rich-text path, which this check does not cover). Move it forward, in `verify/text-roundtrip.mjs`, only after you confirm the alphabets and the sample list still describe the code at the new commit.
 
 ## Reading a failure
 

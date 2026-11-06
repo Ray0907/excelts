@@ -7,7 +7,7 @@ import { writeXlsx, readXlsx } from '../dist/index.js';
 
 // Covered code and the commit at which this check was last confirmed to describe it (see .claude/skills/verify-text-roundtrip/SKILL.md).
 const COVERS = ['src/xml.ts', 'src/xmlRead.ts', 'src/sharedStrings.ts', 'src/readSharedStrings.ts'];
-const SYNC_COMMIT = 'b66d880';
+const SYNC_COMMIT = 'afe392a';
 
 const arg = process.argv[2] ?? '--quick';
 if (arg === '--if-changed') {
