@@ -1,0 +1,45 @@
+{
+  "name": "excelts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./compat": {
+      "types": "./dist/compat/index.d.ts",
+      "default": "./dist/compat/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "vitest run",
+    "verify": "TZ=UTC node verify/run.mjs",
+    "verify:self-test": "TZ=UTC node verify/run.mjs --self-test",
+    "validate:xsd": "node validate/run.mjs",
+    "security": "node security/run.mjs",
+    "security:props": "vitest run security",
+    "verify:text": "node verify/text-roundtrip.mjs --full"
+  },
+  "dependencies": {
+    "fflate": "^0.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "exceljs": "4.4.0",
+    "fast-check": "^4.10.2",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0",
+    "xlsx": "^0.18.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "description": "Fast TypeScript xlsx reader and writer with an exceljs-compatible API",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,9 @@
+.venv
+dist
+node_modules
+security/.build
+security/crashes
+security/results.md
+validate/out
+xsd/*.jar
+xsd/x

@@ -1,0 +1,21 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npx tsc -p .
+      - run: npm test
+      - run: node verify/text-roundtrip.mjs --full
+      # Reader safety: attacks plus seeded mutation fuzz. Without the local corpus the fuzzer seeds from writeXlsx fixtures.
+      - run: node security/run.mjs all --seed 1 --iterations 2000
+      - run: node security/run.mjs fuzz --seed ${{ github.run_number }} --iterations 2000
