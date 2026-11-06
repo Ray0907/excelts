@@ -1,4 +1,7 @@
 .venv
+bench/inputs
+bench/out
+bench/results
 dist
 node_modules
 security/.build

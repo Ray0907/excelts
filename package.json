@@ -21,7 +21,10 @@
     "validate:xsd": "node validate/run.mjs",
     "security": "node security/run.mjs",
     "security:props": "vitest run security",
-    "verify:text": "node verify/text-roundtrip.mjs --full"
+    "verify:text": "node verify/text-roundtrip.mjs --full",
+    "bench": "node bench/run.mjs",
+    "bench:read": "node bench/read-run.mjs",
+    "bench:inputs": "node bench/gen-inputs.mjs"
   },
   "dependencies": {
     "fflate": "^0.8.2"
