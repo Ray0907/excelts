@@ -1,13 +1,13 @@
 # excelts
 
-A TypeScript xlsx reader and writer. It is an independent rewrite, not a fork of exceljs and not affiliated with it. It ships an exceljs-compatible API (`excelts/compat`) so common code changes only its import.
+A TypeScript xlsx reader and writer. It is an independent rewrite, not a fork of exceljs and not affiliated with it. It ships an exceljs-compatible API (`@raytien/excelts/compat`) so common code changes only its import.
 
 Status: pre-release (0.x). Written for speed and a small install: one runtime dependency (`fflate`); native `node:zlib` is used when available.
 
 ## Install
 
 ```
-npm i excelts@next
+npm i @raytien/excelts@next
 ```
 
 Beta releases are published under the `next` tag. Requires Node 20 or newer; browsers work through the `fflate` fallback.
@@ -16,12 +16,12 @@ Beta releases are published under the `next` tag. Requires Node 20 or newer; bro
 
 ```ts
 // lean API: one sheet, rows as arrays
-import { writeXlsx, readXlsx } from 'excelts';
+import { writeXlsx, readXlsx } from '@raytien/excelts';
 const bytes = writeXlsx({ name: 'Sheet1', columns: [{ header: 'name' }, { header: 'amount', format: '#,##0.00' }], rows: [['a', 1.5], ['b', 2]] });
 for (const sheet of readXlsx(bytes).sheets) for (const row of sheet.rows()) console.log(row);
 
 // exceljs-compatible API
-import { Workbook } from 'excelts/compat';
+import { Workbook } from '@raytien/excelts/compat';
 const wb = new Workbook();
 wb.addWorksheet('Report').addRow(['hello', 42]);
 const buffer = await wb.xlsx.writeBuffer();
