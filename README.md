@@ -42,7 +42,7 @@ Synthetic, reproducible here: 100,000 rows x 10 columns (strings, numbers, dates
 | Write | time | peak RSS | file |
 |---|---|---|---|
 | excelts (`writeXlsx`) | 304 ms | 248 MB | 6.3 MB |
-| excelts/compat `WorkbookWriter` style, in memory | 341 ms | 362 MB | 6.3 MB |
+| excelts/compat, in memory | 341 ms | 362 MB | 6.3 MB |
 | excelts/compat streaming | 318 ms | 261 MB | 6.3 MB |
 | exceljs streaming | 1246 ms | 260 MB | 7.3 MB |
 | exceljs in memory | 2820 ms | 1292 MB | 6.2 MB |
